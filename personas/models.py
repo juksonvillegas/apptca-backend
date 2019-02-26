@@ -7,6 +7,8 @@ class Persona(models.Model):
     dni = models.CharField(max_length = 8, blank = True)
     mayorista = models.BooleanField(default = False)
     proveedor = models.BooleanField(default = False)
+    sexo = models.BooleanField(default = True)
+    estado = models.BooleanField(default = True)
     #falta el campo para el sexo
 
     def __str__(self):
