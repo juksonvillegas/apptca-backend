@@ -6,7 +6,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 
 
 class PersonasLista(generics.ListCreateAPIView):
-    queryset = Persona.objects.filter().order_by('nombre')
+    queryset = Persona.objects.filter(proveedor = False).order_by('nombre')
     serializer_class = PersonaSerializer
     filter_backends = (DjangoFilterBackend,)
     #filterset_fields = { 'nombre':['icontains'], 'telefono':['icontains'], 'dni':['icontains'], 'sexo':['exact'] }
@@ -15,4 +15,15 @@ class PersonasLista(generics.ListCreateAPIView):
 class PersonasDetalle(generics.RetrieveUpdateDestroyAPIView):
     queryset = Persona.objects.all()
     serializer_class = PersonaSerializer
+
+class ProveedorDetalle(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Persona.objects.filter(proveedor=True)
+    serializer_class = PersonaSerializer
+
+class ProveedoresLista(generics.ListCreateAPIView):
+    queryset = Persona.objects.filter(proveedor = True).order_by('nombre')
+    serializer_class = PersonaSerializer
+    filter_backends = (DjangoFilterBackend,)
+    #filterset_fields = { 'nombre':['icontains'], 'telefono':['icontains'], 'dni':['icontains'], 'sexo':['exact'] }
+    filterset_fields = { 'nombre':['icontains']}
  
