@@ -9,8 +9,7 @@ class PersonasLista(generics.ListCreateAPIView):
     queryset = Persona.objects.filter(proveedor = False).order_by('nombre')
     serializer_class = PersonaSerializer
     filter_backends = (DjangoFilterBackend,)
-    #filterset_fields = { 'nombre':['icontains'], 'telefono':['icontains'], 'dni':['icontains'], 'sexo':['exact'] }
-    filterset_fields = { 'nombre':['icontains']}
+    filterset_fields = { 'nombre':['icontains'], 'telefono':['icontains'], 'dni':['icontains'], 'sexo':['exact'] }
 
 class PersonasDetalle(generics.RetrieveUpdateDestroyAPIView):
     queryset = Persona.objects.all()
@@ -24,6 +23,5 @@ class ProveedoresLista(generics.ListCreateAPIView):
     queryset = Persona.objects.filter(proveedor = True).order_by('nombre')
     serializer_class = PersonaSerializer
     filter_backends = (DjangoFilterBackend,)
-    #filterset_fields = { 'nombre':['icontains'], 'telefono':['icontains'], 'dni':['icontains'], 'sexo':['exact'] }
-    filterset_fields = { 'nombre':['icontains']}
+    filterset_fields = { 'nombre':['icontains'], 'telefono':['icontains'], 'dni':['icontains'], 'sexo':['exact'] }
  
