@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django_filters',
     'personas',
     'modelos',
+    'categorias',
 ]
 
 MIDDLEWARE = [

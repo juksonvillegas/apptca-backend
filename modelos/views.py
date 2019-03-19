@@ -15,7 +15,7 @@ class MarcaDetalle(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = MarcaSerializer
 
 class ModelosLista(generics.ListCreateAPIView):
-    queryset = Modelo.objects.all().order_by('marca__nombre')
+    queryset = Modelo.objects.all().order_by('marca__nombre', 'nombre')
     serializer_class = ModeloSerializer
     filter_backends = (DjangoFilterBackend,)
     filterset_fields = { 'nombre':['icontains'], 'marca__nombre':['icontains'], 'extendido':['icontains'] }

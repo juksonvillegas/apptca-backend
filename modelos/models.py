@@ -9,7 +9,7 @@ class Marca(models.Model):
 
 class Modelo(models.Model):
     nombre = models.CharField(max_length=50)
-    extendido = models.CharField(max_length=200)
+    extendido = models.CharField(max_length=200, blank=True)
     marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
     estado = models.BooleanField(default=True)
 
