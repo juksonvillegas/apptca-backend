@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'personas',
     'modelos',
     'categorias',
+    'precios',
 ]
 
 MIDDLEWARE = [
