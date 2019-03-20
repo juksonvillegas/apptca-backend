@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'modelos',
     'categorias',
     'precios',
+    'productos',
 ]
 
 MIDDLEWARE = [
