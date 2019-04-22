@@ -1,4 +1,5 @@
 from django.db import models
+import datetime
 
 # Create your models here.
 class Persona(models.Model):
@@ -8,6 +9,7 @@ class Persona(models.Model):
     mayorista = models.BooleanField(default = False)
     proveedor = models.BooleanField(default = False)
     sexo = models.BooleanField(default = True)
+    nacimiento = models.DateField(default = datetime.date(1990,1,1))
     estado = models.BooleanField(default = True)
     #falta el campo para el sexo
 

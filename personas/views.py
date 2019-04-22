@@ -24,4 +24,5 @@ class ProveedoresLista(generics.ListCreateAPIView):
     serializer_class = PersonaSerializer
     filter_backends = (DjangoFilterBackend,)
     filterset_fields = { 'nombre':['icontains'], 'telefono':['icontains'], 'dni':['icontains'], 'sexo':['exact'] }
+
  
