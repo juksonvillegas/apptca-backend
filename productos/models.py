@@ -12,4 +12,4 @@ class Producto(models.Model):
     costo = models.DecimalField( max_digits=5, decimal_places=2, default = 0)
     estado = models.BooleanField(default=True)
     def __str__(self):
-        return self.nombre
+        return self.categoria.nombre + self.modelo.nombre

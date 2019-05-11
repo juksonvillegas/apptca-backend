@@ -9,7 +9,7 @@ class ProductosLista(generics.ListCreateAPIView):
     queryset = Producto.objects.all().order_by('modelo__marca__nombre', 'modelo__nombre')
     serializer_class = ProductoSerializer
     filter_backends = (DjangoFilterBackend,)
-    filterset_fields = { 'modelo__nombre':['icontains'], 'modelo__marca__nombre':['icontains'] }
+    filterset_fields = { 'categoria__nombre':['icontains'], 'modelo__nombre':['icontains'], 'modelo__marca__nombre':['icontains'] }
 
 class ProductoDetalle(generics.RetrieveUpdateDestroyAPIView):
     queryset = Producto.objects.all()

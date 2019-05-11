@@ -16,10 +16,10 @@ class ComprasDetalle(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = CompraSerializer
 
 class Compra_detalleLista(generics.ListCreateAPIView):
-    queryset = Compra_detalle.objects.all()
+    queryset = Compra_detalle.objects.all().order_by('id')
     serializer_class = Compra_DetalleSerializer
     filter_backends = (DjangoFilterBackend,)
-    filterset_fields = { 'producto':['icontains'] }
+    filterset_fields = { 'compra', 'producto' }
 
 class Compra_detalleDetalle(generics.RetrieveUpdateDestroyAPIView):
     queryset = Compra_detalle.objects.all()
